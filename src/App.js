@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import SideBar from "./components/layout/navbar";
+import Expenses from "./components/layout/expenses";
+import MyCard from "./components/layout/myCard";
+import server from "./server/index";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	server();
+	return (
+		<div className="flex gap-5">
+			<SideBar />
+			<Expenses />
+			<MyCard />
+		</div>
+	);
 }
 
 export default App;
